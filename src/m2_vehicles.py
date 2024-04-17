@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (4 pts)
+# DONE: 1. (4 pts)
 #
 #   For this _todo_, create a parent class called Vehicle. It should have an
 #   __init__() function that sets two properties:
@@ -25,8 +25,20 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Vehicle:
+    def __init__(self, year, make, model):
+        self.year = year
+        self.make = make
+        self.model = model
+    
+    def horn(self):
+        print("BEEP BEEP")
+    
+    def vehicle_info(self):
+        print(f"Year: {self.year}\nMake: {self.make}\nModel: {self.model}")
+
 ###############################################################################
-# TODO: 2. (2 pts)
+# DONE: 2. (2 pts)
 #
 #   For this _todo_, create a child class called Car that inherits its
 #   class from Vehicle. Since Vehicle already assumes the vehicle is a car, we
@@ -36,8 +48,11 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Car(Vehicle):
+    pass
+
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   For this _todo_, create a child class called Boat that inherits its class
 #   from Vehicle.
@@ -60,8 +75,19 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Boat(Vehicle):
+    def __init__(self, year, name):
+        self.year = year
+        self.name = name
+    
+    def horn(self):
+        print("BEEP BEEP")
+    
+    def vehicle_info(self):
+        print(f"Year: {self.year}\nName: {self.name}")
+
 ###############################################################################
-# TODO: 3. (4 pts)
+# DONE: 3. (4 pts)
 #
 #   For this _todo_, create a child class called Train that inherits its class
 #   from Vehicle. A Train has only two parameter:
@@ -80,8 +106,19 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Train(Vehicle):
+    def __init__(self, number, length):
+        self.number = number
+        self.length = length
+
+    def horn(self):
+        print("CHOO CHOO")
+
+    def vehicle_info(self):
+        print(f"Number: {self.number}\nLength: {self.length}")
+
 ###############################################################################
-# TODO: 4. (3 pts)
+# DONE: 4. (3 pts)
 #
 #   For this _todo_, create three different objects and save each to a
 #   variable. Create a Car, Boat, and Train.
@@ -92,3 +129,18 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+Vehicle_1 = Car(2005, "Chevie", "MountainClimber")
+
+Vehicle_2 = Boat(2003, "Voyager")
+
+Vehicle_3 = Train(7, 17)
+
+
+Vehicle_1.vehicle_info()
+Vehicle_2.vehicle_info()
+Vehicle_3.vehicle_info()
+
+Vehicle_1.horn()
+Vehicle_2.horn()
+Vehicle_3.horn()
